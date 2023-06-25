@@ -6,7 +6,7 @@ struct node{
 }rt[10];
 
 int main(){
-    int constmat[20][20];
+    int costmat[20][20];
     int nodes, i, j, k, count = 0;
     printf("\nEnter the number of nodes: ");
     scanf("%d", &nodes);
@@ -14,9 +14,9 @@ int main(){
     printf("\nEnter the cost matrix:\n");
     for(i = 0; i < nodes; i++){
         for(j=0; j < nodes; j++){
-            scanf("%d", &constmat[i][j]);
-            constmat[i][i] = 0;
-            rt[i].dist[j] = constmat[i][j];
+            scanf("%d", &costmat[i][j]);
+            costmat[i][i] = 0;
+            rt[i].dist[j] = costmat[i][j];
             rt[i].from[j] = j;
         }
     }
@@ -25,7 +25,7 @@ int main(){
 	    for(i=0;i<nodes;i++){
             for(j=0;j<nodes;j++){
                 for(k=0;k<nodes;k++){
-                    if(rt[i].dist[j]>constmat[i][k]+rt[k].dist[j]){
+                    if(rt[i].dist[j]>costmat[i][k]+rt[k].dist[j]){
                         rt[i].dist[j]=rt[i].dist[k]+rt[k].dist[j];
                         rt[i].from[j]=k;
                         count++;
