@@ -1,2 +1,8 @@
 **/a.exe
+**dest_file
+**ftp_file
+**server
+**client
 .vscode
+testClient.c
+testServer.c
